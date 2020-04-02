@@ -121,5 +121,9 @@ article.recipe-card {
   height: 200px;
   background: salmon; }
 
+@media screen and (max-width: 640px) {
+  article.recipe-card {
+    grid-column: auto /span 4; } }
+
 body {
   background: #d4d3d3; }

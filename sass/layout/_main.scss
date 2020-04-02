@@ -1,8 +1,8 @@
-main{
+main {
     background: saddlebrown;
     padding: 1rem;
 
-    section.recipes{
+    section.recipes {
         width: 100%;
         max-width: 1000px;
         display: grid;
@@ -11,3 +11,9 @@ main{
         margin: 0 auto;
     }
 }
+
+// @media screen and (max-width: 640px) {
+//     section.recipes {
+//         grid-template-columns: repeat(1, 1fr);
+//     }
+// }

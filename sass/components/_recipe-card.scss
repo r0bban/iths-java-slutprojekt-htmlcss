@@ -18,3 +18,11 @@ article.recipe-card {
     //     }
     // }
 }
+
+
+@media screen and (max-width: 640px) {
+    article.recipe-card {
+        grid-column: auto /span 4;
+    }
+}
+
