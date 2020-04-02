@@ -1,0 +1,81 @@
+@media screen and (min-width: 641px) {
+    article.recipe-card {
+        --picture-height: 160px;
+        grid-auto-rows: auto min-content 0 min-content min-content;
+        background: var(--light-background);
+        border: 0 solid #444444;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px rgb(165, 165, 165);
+        grid-template-areas:
+            "title"
+            "picture"
+            "recipe-numbers-container"
+            "recipe-description"
+            "recipe-feedback-container";
+
+        h3,
+        p,
+        .recipe-feedback-container,
+        .recipe-numbers-container {
+            padding: 1rem 0.5rem;
+        }
+
+        h3 {
+            grid-area: title;
+            background: none;
+            color: black;
+            font-size: 1.5em;
+            border-top-left-radius: inherit;
+            border-top-right-radius: inherit;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        picture {
+            position: relative;
+            height: var(--picture-height);
+            border-radius: 0;
+        }
+
+        p.recipe-description {
+            grid-area: recipe-description;
+            color: var(--dark-text);
+        }
+
+        .recipe-numbers-container {
+            position: relative;
+            top: -1.3em;
+            grid-area: recipe-numbers-container;
+            margin-top: 0;
+        }
+
+        .recipe-feedback-container {
+            grid-area: recipe-feedback-container;
+            text-shadow: none;
+            color: var(--dark-text);
+            justify-content: flex-end;
+
+            span.material-icons {
+                &.favourite,
+                &.non-favourite {
+                    margin-right: 1rem;
+                }
+            }
+
+            button.card-button {
+                margin-right: auto;
+                font-size: 0.6em;
+                font-weight: 450;
+                color: var(--primary-dark);
+                padding: 0.5rem 0.5rem;
+                border: 0 solid white;
+                border-radius: 0.3rem;
+                background: none;
+
+                &:hover {
+                    background: #38739615;
+                }
+            }
+        }
+    }
+}
