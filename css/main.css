@@ -62,9 +62,7 @@ header {
 nav {
   background: var(--light-background);
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
   padding: 0rem 2rem;
   min-height: 4rem;
   border-width: 1px 0;
@@ -104,26 +102,111 @@ nav {
       display: none; } }
 
 main {
-  background: saddlebrown;
+  background: var(--light-background);
   padding: 1rem; }
-  main section.recipes {
-    width: 100%;
-    max-width: 1000px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin: 0 auto; }
 
-article.recipe-card {
-  grid-column: auto /span 1;
-  display: flex;
+section.recipes {
   width: 100%;
-  height: 200px;
-  background: salmon; }
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 auto; }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  section.recipes {
+    padding: 0 2rem; } }
+
+@media screen and (min-width: 641px) and (max-width: 992px) {
+  section.recipes {
+    grid-template-columns: repeat(2, 1fr);
+    box-sizing: border-box; } }
 
 @media screen and (max-width: 640px) {
-  article.recipe-card {
-    grid-column: auto /span 4; } }
+  section.recipes {
+    grid-template-columns: 1fr; } }
+
+article.recipe-card {
+  --picture-height: 135px;
+  grid-column: auto / span 1;
+  grid-auto-rows: min-content min-content auto;
+  display: grid;
+  position: relative;
+  width: 100%;
+  background: salmon;
+  grid-template-areas: "recipe-feedback-container" "recipe-numbers-container" "title"; }
+  article.recipe-card h3,
+  article.recipe-card .recipe-feedback-container,
+  article.recipe-card .recipe-numbers-container {
+    padding: 0.3rem 0.3rem; }
+  article.recipe-card h3 {
+    grid-area: title;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.4);
+    color: var(--light-text);
+    font-weight: 300;
+    font-size: 1.7em; }
+  article.recipe-card picture {
+    grid-area: picture;
+    position: absolute;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 0; }
+    article.recipe-card picture img,
+    article.recipe-card picture source {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 90%; }
+  article.recipe-card .recipe-numbers-container,
+  article.recipe-card .recipe-feedback-container {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    color: var(--light-text);
+    font-size: 1.3em;
+    text-shadow: 2px 2px 3px black; }
+  article.recipe-card .recipe-feedback-container {
+    grid-area: recipe-feedback-container; }
+    article.recipe-card .recipe-feedback-container .material-icons.favourite::before {
+      content: "favorite"; }
+    article.recipe-card .recipe-feedback-container .material-icons.non-favourite::before {
+      content: "favorite_border"; }
+    article.recipe-card .recipe-feedback-container .material-icons.raiting.one::before {
+      content: "star star_outline star_outline star_outline star_outline"; }
+    article.recipe-card .recipe-feedback-container .material-icons.raiting.two::before {
+      content: "star star star_outline star_outline star_outline"; }
+    article.recipe-card .recipe-feedback-container .material-icons.raiting.three::before {
+      content: "star star star star_outline star_outline"; }
+    article.recipe-card .recipe-feedback-container .material-icons.raiting.four::before {
+      content: "star star star star star_outline"; }
+    article.recipe-card .recipe-feedback-container .material-icons.raiting.five::before {
+      content: "star star star star star_outline"; }
+  article.recipe-card .recipe-numbers-container {
+    grid-area: recipe-numbers-container;
+    margin-top: var(--picture-height);
+    display: flex;
+    align-items: center; }
+    article.recipe-card .recipe-numbers-container * {
+      font-size: 1em; }
+    article.recipe-card .recipe-numbers-container .recipe-minutes {
+      flex-grow: 1; }
+    article.recipe-card .recipe-numbers-container span.material-icons.time {
+      padding-right: 0.3rem; }
+      article.recipe-card .recipe-numbers-container span.material-icons.time::before {
+        content: "timer"; }
+    article.recipe-card .recipe-numbers-container span.material-icons.portions {
+      padding-right: 0.3rem; }
+      article.recipe-card .recipe-numbers-container span.material-icons.portions::before {
+        content: "people_outline"; }
+
+@media screen and (max-width: 640px) {
+  p.recipe-description {
+    display: none; } }
 
 body {
   background: #d4d3d3; }
