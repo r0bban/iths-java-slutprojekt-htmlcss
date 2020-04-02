@@ -30,6 +30,14 @@ p,
 a {
   font-family: "Roboto", sans-serif; }
 
+:root {
+  --primary-dark: #387496;
+  --secondary-dark: #e88238;
+  --dark-background: #387396;
+  --light-background: white;
+  --light-text: white;
+  --dark-text: rgb(128, 126, 126); }
+
 .grid-container {
   display: grid;
   max-width: 1200px;
@@ -42,33 +50,57 @@ header {
   display: flex;
   justify-content: center; }
   header img.logo-top {
-    padding: 1rem 0; }
+    padding: 1rem 1rem;
+    width: 100%;
+    max-width: 40rem;
+    min-width: 0; }
+
+@media screen and (max-width: 640px) {
+  header {
+    display: none; } }
 
 nav {
-  background: #f2f5f7;
+  background: var(--light-background);
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
   padding: 0rem 2rem;
-  min-height: 4rem; }
+  min-height: 4rem;
+  border-width: 1px 0;
+  border-color: var(--dark-background);
+  border-style: solid;
+  flex-wrap: nowrap;
+  box-sizing: border-box; }
+  nav img.logo {
+    height: 4rem; }
   nav a,
   nav a:visited,
   nav a:hover,
   nav a:active {
     font-size: 1.3em;
-    color: #505d68;
+    color: var(--primary-dark);
     text-decoration: none;
     margin: 0 1rem 0 1rem; }
 
-@media screen and (min-width: 640px) {
-  nav img.logo {
-    height: 4rem; }
+@media screen and (min-width: 641px) {
   nav img.menu {
     display: none; }
   nav.home-page {
     justify-content: center; }
     nav.home-page img.logo {
+      display: none; } }
+
+@media screen and (max-width: 640px) {
+  nav {
+    padding: 0 0.5rem;
+    border: 0; }
+    nav img.logo {
+      width: 100%;
+      max-width: 20rem;
+      min-width: 0;
+      margin: 0 auto; }
+    nav a {
       display: none; } }
 
 body {

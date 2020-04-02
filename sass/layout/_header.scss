@@ -2,7 +2,16 @@ header {
     display: flex;
     justify-content: center;
 
-    img.logo-top{
-        padding: 1rem 0;
+    img.logo-top {
+        padding: 1rem 1rem;
+        width: 100%;
+        max-width: 40rem;
+        min-width: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        display: none;
     }
 }
