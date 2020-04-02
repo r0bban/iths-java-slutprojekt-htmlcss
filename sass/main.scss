@@ -1,5 +1,9 @@
 @import 'base/reset';
+@import 'base/typography';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/nav';
 
 body {
-    background: darkcyan;
+    background: rgb(212, 211, 211);
 }

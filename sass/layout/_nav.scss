@@ -1,0 +1,39 @@
+nav {
+    background: #f2f5f7;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0rem 2rem;
+    min-height: 4rem;
+
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+        font-size: 1.3em;
+        // font-weight: bold;
+        color: #505d68;
+        text-decoration: none;
+        margin: 0 1rem 0 1rem;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    
+    nav {
+        img.logo {
+            height: 4rem;
+        }
+
+        img.menu {
+            display: none;
+        }
+        &.home-page {
+            justify-content: center;
+            img.logo {
+                display: none;
+            }
+        }
+    }
+}
