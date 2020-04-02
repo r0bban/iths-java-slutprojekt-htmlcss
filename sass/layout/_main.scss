@@ -1,0 +1,13 @@
+main{
+    background: saddlebrown;
+    padding: 1rem;
+
+    section.recipes{
+        width: 100%;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin: 0 auto;
+    }
+}
